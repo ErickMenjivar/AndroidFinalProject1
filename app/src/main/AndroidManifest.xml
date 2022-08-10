@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cst2335.erickproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ErickProject">
         <activity
-            android:name=".Home"
+            android:name=".RvJson"
+            android:exported="false" />
+        <activity
+            android:name=".RecView2"
+            android:exported="false" />
+        <activity
+            android:name=".Nutrition"
+            android:exported="false" />
+        <activity
+            android:name=".FoodFragment"
+            android:exported="false" />
+        <activity
+            android:name=".FoodFavorites"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".NormalRV"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,34 @@
 <resources>
-    <string name="app_name">erickProject</string>
+    <string name="app_name">FoodNutApp</string>
     <string name="searchButton">Search</string>
+    <string name="start_button">Start</string>
+    <string name="app_header">FoodNutApp</string>
+    <string name="new_search">New search</string>
+    <string name="my_favorites">My Favorites</string>
+    <string name="about">About</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="loginBtn">Login</string>
+    <string name="name">com.cst2335.erickproject.name</string>
+    <string name="NutritionButton">Food Nutrition</string>
+    <string name="ExitButton">Back Home</string>
+    <string name="Hint">search nutrition here</string>
+    <string name="food">Type a Food Item</string>
+    <string name="FoodButton">Food Nutrition Database</string>
+    <string name="search">Search</string>
+    <string name="SearchItem">Search</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="SaveItem">Save this Item?</string>
+    <string name="Save">Save</string>
+    <string name="Saved">Saved!</string>
+    <string name="Author">Erick Menjivar</string>
+    <string name="HowTo">Search a food item in the text field and hit the Search Button</string>
+    <string name="Help">Help</string>
+    <string name="Error">Enter a valid food item ie: Apple</string>
+    <string name="Delete">Delete</string>
+    <string name="DeleteMenu">Do you want to delete this food item</string>
+    <string name="versionNum">Version: 2.0</string>
+    <string name="foodSearch">Food Search</string>
+    <string name="favoritesList">Favorites List</string>
+    <string name="jsonDL">Json Data is downloading</string>
 </resources>
