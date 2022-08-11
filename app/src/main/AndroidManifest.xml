@@ -11,10 +11,7 @@
         android:theme="@style/Theme.ErickProject">
         <activity
             android:name=".Home"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
