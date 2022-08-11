@@ -2,7 +2,6 @@ package com.cst2335.erickproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.DialogInterface;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +15,11 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Home extends AppCompatActivity {
-
+    /**
+     * This is the onCreate function of the application, on creation all variables will be initialized
+     * as well as all of the onClick listeners of the entire application will be initialized
+     * @param savedInstanceState the default bundle of the onCreate
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,9 @@ public class Home extends AppCompatActivity {
         String name = nameremain.getString("nameapp","");
         name_field.setText(name);
 
+        /**
+         * This is an onClick Listener for to set intent and change activity
+         */
         activity_button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +46,9 @@ public class Home extends AppCompatActivity {
                 startActivity(goToActivity1);
                     }
                 });
+        /**
+         * This is an onClick Listener for to set intent and change activity
+         */
         activity_button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +56,9 @@ public class Home extends AppCompatActivity {
                 startActivity(goToActivity2);
             }
         });
+        /**
+         * This is an onClick Listener for to set intent and change activity
+         */
         activity_button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +66,10 @@ public class Home extends AppCompatActivity {
                 startActivity(goToActivity3);
             }
         });
+        /**
+         * This oncllicklistener is for the help button, it displays a snackbar at the bottom of the screen
+         * to provide assistance on how to use this page of the project
+         */
         help_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +77,10 @@ public class Home extends AppCompatActivity {
 
             }
         });
+        /**
+         * This onclicklistener is for the about me button, or "Information Button" this calls upon a
+         * alertdialogue to display the information about the application and who created it
+         */
         about_me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +91,10 @@ public class Home extends AppCompatActivity {
 
 
         });
+        /**
+         * This oncllicklistener is for the help button, it displays a toast at the bottom of the screen
+         * to provide assistance on how the shared preference welcome screen works
+         */
         about_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +102,11 @@ public class Home extends AppCompatActivity {
             }
         });
              }
+
+    /**
+     * This is the onpause of the application, it stores the Shared Preference so that when the app is not in use
+     * the name entered by the application will save and be displayed on resuming the application
+     */
     @Override
     protected void onPause(){
         super.onPause();
