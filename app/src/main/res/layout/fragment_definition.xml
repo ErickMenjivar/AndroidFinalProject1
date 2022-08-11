@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".FragmentDefinition">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_200"
+        >
+
+        <TextView
+            android:id="@+id/definition_String_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="122dp"
+            android:layout_below="@+id/searched_word"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="59dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="45dp"
+            android:text="Fragment has been opened"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/close_fragment"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/definition_String_viewer"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="89dp"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:text="Close Fragment" />
+
+        <Button
+            android:id="@+id/add_favorites"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/definition_String_viewer"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="221dp"
+            android:layout_weight="1"
+            android:text="Add to favorites" />
+
+        <TextView
+            android:id="@+id/searched_word"
+            android:layout_width="106dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="157dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="147dp"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textAllCaps="true"
+            android:text="TextView" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
