@@ -15,18 +15,18 @@
 
         <TextView
             android:id="@+id/definition_String_viewer"
-            android:layout_width="wrap_content"
-            android:layout_height="122dp"
+            android:layout_width="351dp"
+            android:layout_height="123dp"
             android:layout_below="@+id/searched_word"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="59dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="53dp"
-            android:layout_marginEnd="45dp"
+            android:layout_marginEnd="30dp"
             android:text="Fragment has been opened"
-            android:textColor="@color/white"
             android:textAllCaps="true"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/close_fragment"
@@ -55,18 +55,18 @@
 
         <TextView
             android:id="@+id/searched_word"
-            android:layout_width="106dp"
-            android:layout_height="44dp"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="157dp"
+            android:layout_marginStart="26dp"
             android:layout_marginTop="52dp"
-            android:layout_marginEnd="147dp"
-            android:textColor="@color/white"
-            android:textSize="36sp"
+            android:layout_marginEnd="41dp"
+            android:text="TextView"
             android:textAllCaps="true"
-            android:text="TextView" />
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
 
     </RelativeLayout>

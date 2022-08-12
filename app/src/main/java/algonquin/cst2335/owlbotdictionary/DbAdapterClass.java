@@ -8,63 +8,53 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DbAdapterClass extends RecyclerView.Adapter<DbAdapterClass.MyViewHolder>{
 
-    private Context mContext;
-    private List<WordModelDbClass> mDataW;
-    private List<WordModelDbClass> mDataP;
-    private List<WordModelDbClass> mDataD;
-    private SelectListener listener;
+    Context context;
+    ArrayList wordListDbWord,wordListDbPro,wordListDbDef;
 
-    public DbAdapterClass(Context mContext, List<WordModelDbClass> mDataW,List<WordModelDbClass> mDataP,List<WordModelDbClass> mDataD, SelectListener listener) {
-        this.mContext = mContext;
-        this.mDataW = mDataW;
-        this.mDataP = mDataP;
-        this.mDataD = mDataD;
-        this.listener =listener;
+
+    DbAdapterClass(Context context, ArrayList wordListDbWord, ArrayList wordListDbDef, ArrayList wordListDbPro){
+        this.context =context;
+        this.wordListDbDef = wordListDbDef;
+        this.wordListDbPro = wordListDbPro;
+        this.wordListDbWord =wordListDbWord;
+
     }
 
     @NonNull
     @Override
-    public DbAdapterClass.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v;
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        v =inflater.inflate(R.layout.db_items, parent, false);
-        return new DbAdapterClass.MyViewHolder(v, listener);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.db_items, parent, false);
+        return new MyViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull DbAdapterClass.MyViewHolder holder, int position) {
-        holder.definition.setText(mDataD.get(position).getDefinition());
-        holder.word.setText(mDataW.get(position).getWord());
-        holder.pro.setText(mDataP.get(position).getPronunciation());
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.word_db.setText(String.valueOf(wordListDbWord.get(10)));
+        holder.pronunciation_db.setText(String.valueOf(wordListDbPro.get(10)));
+        holder.definition_txt_db.setText(String.valueOf(wordListDbDef.get(10)));
+
     }
 
     @Override
     public int getItemCount() {
-        return  mDataD.size();
+        return wordListDbWord.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView definition;
-        TextView word;
-        TextView pro;
-        SelectListener itemListener;
-        public MyViewHolder(@NonNull View itemView, SelectListener itemListener){
-            super(itemView);
-            definition =  itemView.findViewById(R.id.definition_txt_db);
-            word = itemView.findViewById(R.id.word_db);
-            pro = itemView.findViewById(R.id.pronunciation_db);
-            this.itemListener = itemListener;
-            itemView.setOnClickListener(this);
-        }
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @Override
-        public void onClick(View view) {
-            itemListener.onItemClicked(getBindingAdapterPosition());
+        TextView word_db, pronunciation_db,definition_txt_db;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            word_db = itemView.findViewById(R.id.word_db);
+            pronunciation_db = itemView.findViewById(R.id.pronunciation_db);
+            definition_txt_db = itemView.findViewById(R.id.definition_txt_db);
         }
     }
 }

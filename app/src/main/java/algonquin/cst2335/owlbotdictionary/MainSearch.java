@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,13 +120,30 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+
+
         switch (item.getItemId()) {
             case R.id.clear:
-                pro.setVisibility(View.INVISIBLE);
-                def.setVisibility(View.INVISIBLE);
-                showWord.setVisibility(View.INVISIBLE);
+                //pro.setVisibility(View.INVISIBLE);
+                //def.setVisibility(View.INVISIBLE);
+                //showWord.setVisibility(View.INVISIBLE);
                 edit.setText("");
                 break;
+
+            case R.id.email:
+                Toast.makeText(this,"emial@algonquinlive.com",
+                        Toast.LENGTH_LONG).show();
+
+                break;
+
+            case R.id.favs:
+
+                Intent iicon = new Intent(MainSearch.this, Favorites.class);
+                startActivity(iicon);
+
+                break;
+
+
             case R.id.help:
                 AlertDialog dialog = new AlertDialog.Builder(MainSearch.this)
                         .setTitle("Help")

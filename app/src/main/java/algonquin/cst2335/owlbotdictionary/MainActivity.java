@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         activity_button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToActivity2 = new Intent(MainActivity.this, Home.class);
+                Intent goToActivity2 = new Intent(MainActivity.this, Favorites.class);
                 startActivity(goToActivity2);
             }
         });

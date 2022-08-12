@@ -90,4 +90,15 @@ public class DataBase extends SQLiteOpenHelper {
         }
     }
 
+    Cursor  readAll(){
+        String query = " SELECT * FROM " + OWLBOT_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db!=null){
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
+    }
+
 }

@@ -15,9 +15,6 @@
             android:name=".MainSearch"
             android:exported="false" />
         <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
             android:name=".Favorites"
             android:exported="false" />
         <activity
