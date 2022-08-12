@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">Owlbot Dictionaire</string>
+    <string name="search">Searche</string>
+    <string name="enter_a_word">Entre une mot</string>
+    <string name="main_name">Version Un de Page Main, par Jacob Danby</string>
+    <string name="searchButton">Searche...</string>
+    <string name="Enter_Menu"></string>
+    <string name="Enter_Menu2">Choisez un des boutons pour changer activitie</string>
+    <string name="Welcome_Message">Bienvenue a le projet final de mobile</string>
+    <string name="Help_Button">Au secours!</string>
+    <string name="Navigation_Button1">Nouveau searche</string>
+    <string name="Navigation_Button2">Favourites</string>
+    <string name="Navigation_Button3">Null</string>
+    <string name="Name_Field">Entre ton nom ici!</string>
+    <string name="About_Me">Il s\'agit du projet final mobile de Jacob Danby, Jaddua Jones et Erick Menjivar. Nous avons choisi le Dictionnaire
+    Base de données pour notre sujet de projet. Les boutons ci-dessous mènent à toutes les fonctions que nous avons créées pour l\'application, veuillez profiter
+    et cliquez en dehors de cette boîte de dialogue pour continuer à utiliser l'application.</string>
+    <string name="About_Title">Information sur cette application</string>
+    <string name="Name_Help">Entrez votre nom ici et il vous enregistrera et vous accueillera
+</string>
+</resources>

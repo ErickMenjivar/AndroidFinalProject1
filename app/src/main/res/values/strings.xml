@@ -17,6 +17,4 @@
     and click out of this dialogue box to continue your use of the application.</string>
     <string name="About_Title">About This App!</string>
     <string name="Name_Help">Type Your Name Here and it will Save and Welcome You</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
