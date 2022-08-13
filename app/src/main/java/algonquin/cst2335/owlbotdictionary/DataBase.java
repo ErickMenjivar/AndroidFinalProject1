@@ -1,5 +1,6 @@
 package algonquin.cst2335.owlbotdictionary;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,6 +11,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class for the data base.
+ */
 public class DataBase extends SQLiteOpenHelper {
 
     public static final String OWLBOT_TABLE = "OWLBOT_TABLE";
@@ -19,12 +23,20 @@ public class DataBase extends SQLiteOpenHelper {
     public static final String OWLBOT_ID = "_id";
     private static final String TAG = "MAIN_ACTIVITY";
 
+    /**
+     * The overloaded constructor for the DataBase class.
+     * @param context
+     */
     public DataBase(Context context) {
         super(context, "OwlBotDictionary.db", null, 3);
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
-    //Method is called to create a database if it doesn't exist.
+    /**
+     * Method is called to create a database if it doesn't exist.
+     * @param db The database.
+     */
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = " CREATE TABLE IF NOT EXISTS " + OWLBOT_TABLE + " ( " + OWLBOT_ID + " INTEGER  PRIMARY KEY AUTOINCREMENT, "
@@ -35,13 +47,25 @@ public class DataBase extends SQLiteOpenHelper {
 
     }
 
-    //Method is called if newer database is constructed
+    /**
+     * Method is called if newer database is constructed.
+     * @param db The database.
+     * @param oldVersion The old version.
+     * @param newVersion The new version.
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + OWLBOT_TABLE);
 
     }
 
+    /**
+     * A method to insert a word and its details into the database.
+     * @param word The word.
+     * @param def The definition.
+     * @param pro The pronunciation.
+     * @return A boolean where true is a successful insertion.
+     */
     public boolean insert(String word, String def, String pro) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -56,6 +80,10 @@ public class DataBase extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * A method to fetch the list of data from the database.
+     * @return The list array from the database.
+     */
     public List[] fetch() {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * from OWLBOT_TABLE", null, null);
@@ -76,6 +104,13 @@ public class DataBase extends SQLiteOpenHelper {
         return ans;
     }
 
+    /**
+     * A method to delete a word and its details from the database.
+     * @param word The word.
+     * @param def The definition.
+     * @param pro The pronunciation.
+     * @return A boolean where true is a successful deletion.
+     */
     public boolean delete(String word, String def, String pro) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();

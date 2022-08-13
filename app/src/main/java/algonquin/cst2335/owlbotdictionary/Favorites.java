@@ -1,5 +1,6 @@
 package algonquin.cst2335.owlbotdictionary;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * A class for the favourite words the user will save.
+ */
 public class Favorites extends AppCompatActivity implements SelectListener {
 
     RecyclerView recViewDb;
@@ -19,6 +23,10 @@ public class Favorites extends AppCompatActivity implements SelectListener {
     List<WordModelDbClass> wordListDbDef;
     DataBase db;
 
+    /**
+     * The onCreate function.
+     * @param savedInstanceState The bundled saved instance state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +50,10 @@ public class Favorites extends AppCompatActivity implements SelectListener {
 //        recViewDb.setAdapter(adapter);
 //    }
 
+    /**
+     * A method to put data into a recycler view.
+     * @param wordList The word list data to put into a recycler view.
+     */
     private void putDataIntoRecyclerView(List<WordModelClass> wordList){
         AdapterClass adapter = new AdapterClass(this, wordList, this);
         recViewDb.setLayoutManager(new LinearLayoutManager(this));
@@ -49,11 +61,21 @@ public class Favorites extends AppCompatActivity implements SelectListener {
     }
 
 
+    /**
+     * A method to call when an item is clicked.
+     * @param position The position.
+     */
     @Override
     public void onItemClicked(int position) {
 
     }
 
+    /**
+     * A method to save the variable values.
+     * @param val1 The first value.
+     * @param val2 The second value.
+     * @param val3 The third value.
+     */
     @Override
     public void saveVarValues(String val1, String val2, String val3) {
 

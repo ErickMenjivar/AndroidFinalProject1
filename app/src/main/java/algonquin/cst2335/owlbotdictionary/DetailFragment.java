@@ -1,5 +1,6 @@
 package algonquin.cst2335.owlbotdictionary;
 
+
 import android.content.Context;
 import android.os.Bundle;
 
@@ -14,6 +15,9 @@ import android.widget.TextView;
 
 import java.nio.charset.MalformedInputException;
 
+/**
+ * A class for the detail fragment.
+ */
 public class DetailFragment extends Fragment {
 
     private Bundle dataFromActivity;
@@ -21,10 +25,20 @@ public class DetailFragment extends Fragment {
     private AppCompatActivity parentActivity;
     private TextView tvWord, tvDefine, tvPronunciation;
 
+    /**
+     * The no-arg constructor for the detail fragment class.
+     */
     public DetailFragment(){
-        //Required empty public constructor
+
     }
 
+    /**
+     * A method to call once the view is created.
+     * @param inflater The layout inflater.
+     * @param container The view group container.
+     * @param savedInstanceState The bundle saved instance state.
+     * @return An instance of the view.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,6 +62,10 @@ public class DetailFragment extends Fragment {
         return view;
     }
 
+    /**
+     * A method that is called when attached to a view.
+     * @param context The context.
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

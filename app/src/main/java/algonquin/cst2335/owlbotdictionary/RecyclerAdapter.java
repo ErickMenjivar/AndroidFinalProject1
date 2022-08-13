@@ -22,6 +22,10 @@ import org.json.JSONObject;
 
 import java.util.List;
 
+/**
+ * A class for adapting a RecyclerView known as RecyclerAdapter.
+ */
+
 class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     Context context;
@@ -61,6 +65,12 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
             };
         */
 
+    /**
+     * The overloaded constructor for the RecyclerAdapter class.
+     * @param data The data list.
+     * @param obj The JSON object.
+     * @param context The context.
+     */
     public RecyclerAdapter(List<String> data, JSONObject obj, Context context) {
 
         this.data = data;
@@ -74,11 +84,19 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     }
 
+    /**
+     * An inner class called ViewHolder.
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {//implements View.OnClickListener{
 
         Context mContext;
         TextView textView;
 
+        /**
+         * The overloaded constructor for the ViewHolder class.
+         * @param itemView The view.
+         * @param context The context.
+         */
         public ViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             this.mContext = context;
@@ -86,6 +104,12 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
         }
     }
 
+    /**
+     * A method to run when the ViewHolder is created.
+     * @param parent The view group.
+     * @param viewType The view type.
+     * @return An instance of the ViewHolder class.
+     */
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -95,6 +119,11 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
         return new ViewHolder(view, parent.getContext());
     }
 
+    /**
+     * A method to launch when the view holder is bound.
+     * @param holder The MyViewHolder instance.
+     * @param position The position.
+     */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -130,6 +159,10 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     }
 
+    /**
+     * A method to get the number of items.
+     * @return The number of items.
+     */
     @Override
     public int getItemCount() {
         return data.size();

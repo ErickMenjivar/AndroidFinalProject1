@@ -1,5 +1,6 @@
 package algonquin.cst2335.owlbotdictionary;
 
+
 import android.content.Context;
 import android.os.Bundle;
 
@@ -17,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+/**
+ * A class for the fragment definition.
+ */
 public class FragmentDefinition extends Fragment {
 
     private String definition;
@@ -26,6 +30,14 @@ public class FragmentDefinition extends Fragment {
     SelectListener selectListener;
     DataBase db_fav;
     View view;
+
+    /**
+     * A method to call once the view is created.
+     * @param inflater The layout inflater.
+     * @param container The view group container.
+     * @param savedInstanceState The bundle saved instance state.
+     * @return An instance of the view.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,6 +82,10 @@ public class FragmentDefinition extends Fragment {
         return view;
     }
 
+    /**
+     * A method that is called when attached to a view.
+     * @param context The context.
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -80,6 +96,10 @@ public class FragmentDefinition extends Fragment {
         }
     }
 
+    /**
+     * A method to close the fragment.
+     * @param fragmentDefinition The fragment definition.
+     */
     private void closeFragment(FragmentDefinition fragmentDefinition) {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentDefinition fragment = (FragmentDefinition) fragmentManager.findFragmentById(R.id.fragment_frame);

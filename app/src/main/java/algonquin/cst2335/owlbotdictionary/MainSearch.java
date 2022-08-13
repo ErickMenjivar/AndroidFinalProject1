@@ -43,6 +43,10 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+/**
+ * A class for the main search functionality.
+ */
+
 public class MainSearch extends AppCompatActivity implements SelectListener {
     private static final String TAG = "MAIN_ACTIVITY";
     public static final String WORD = "word";
@@ -67,6 +71,11 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
     String checkVal3 = null;
 
 
+    /**
+     * A method that is called when the options menu is created.
+     * @param menu The menu.
+     * @return A boolean where true is a success.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -116,6 +125,11 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
 
     }
 
+    /**
+     * A method that is called when an options item is selected.
+     * @param item The menu item.
+     * @return A boolean where true is a success.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -242,13 +256,18 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
     }
 
 
-
+    /**
+     * The onStart method.
+     */
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, " onStart");
     }
 
+    /**
+     * The onPause method.
+     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -263,12 +282,18 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
         editor.apply();
     }
 
+    /**
+     * The onResume method.
+     */
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG, " onResume");
     }
 
+    /**
+     * The onStop method.
+     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -284,18 +309,29 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
         editor.apply();
     }
 
+    /**
+     * The onDestroy method.
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, " onDestroy");
     }
 
+    /**
+     * A method to put data into a recycler view.
+     * @param wordList The word list data to put in the recycler view.
+     */
     private void putDataIntoRecyclerView(List<WordModelClass> wordList){
         AdapterClass adapter = new AdapterClass(this, wordList, this);
         recView.setLayoutManager(new LinearLayoutManager(this));
         recView.setAdapter(adapter);
     }
 
+    /**
+     * A method that is called when an item is clicked.
+     * @param position The position.
+     */
     @Override
     public void onItemClicked(int position) {
         replaceFragment(new FragmentDefinition(), position, wordList, wordTopass);
@@ -304,6 +340,12 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
 //        startActivity(i2);
     }
 
+    /**
+     * A method to save the variable values.
+     * @param val1 The first value.
+     * @param val2 The second value.
+     * @param val3 The third value.
+     */
     @Override
     public void saveVarValues(String val1, String val2, String val3) {
         String checkVal1 = val1;
@@ -315,11 +357,18 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
 
     }
 
+    /**
+     * A method that is called when the back button is pressed.
+     */
     @Override
     public void onBackPressed() {
         closeFragment(new FragmentDefinition());
     }
 
+    /**
+     * A method to close the fragment.
+     * @param fragmentDefinition The fragment definition.
+     */
     private void closeFragment(FragmentDefinition fragmentDefinition) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentDefinition fragment = (FragmentDefinition) fragmentManager.findFragmentById(R.id.fragment_frame);
@@ -333,6 +382,13 @@ public class MainSearch extends AppCompatActivity implements SelectListener {
 
     }
 
+    /**
+     * A method to replace the fragment.
+     * @param fragmentDefinition The fragment definition.
+     * @param position The position.
+     * @param wordList The word list.
+     * @param word The word.
+     */
     private void replaceFragment(FragmentDefinition fragmentDefinition, int position, List<WordModelClass> wordList, String word) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
